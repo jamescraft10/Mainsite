@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mainsite</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap">
+        <style>
+            body {
+                color: white;
+                font-family: Sans-serif;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(
+                    to right,
+                    #313134 0%,
+                    #313134 20%,
+                    #1B1B1E 20%,
+                    #1B1B1E 100%
+                );
+            }
+            #MessageImg {
+                position: absolute;
+                width: 50px;
+                height: 50px;
+            }
+            #MessageName {
+                position: absolute;
+                margin-top: -2px;
+                margin-left: 55px;
+            }
+            #Message {
+                margin-top: 20px;
+                position: absolute;
+                margin-left: 55px;
+            }
+            .MessageAll {
+                margin-left: 21%;
+            }
+            .SideBarButton {
+                position: fixed;
+                margin-left: 2%;
+                border: 2pt solid #1B1B1E;
+                width: 16%;
+                height: 6%;
+                background-color: #919cb4;
+            }
+            .SideBarButton:hover {
+            animation-name: ColorChange;
+            animation-duration: 400ms;
+            animation-delay: 20ms;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+            }
+            @keyframes ColorChange {
+                from {
+                    color: #1A1F16;
+                    background-color: #D8DBE2;
+                    text-shadow: 0px 0px 0px #1B1B1E;
+                }
+                to {
+                    color: whitesmoke;
+                    background-color: #58A4B0;
+                    text-shadow: 0px 0px 10px white;
+                }
+            }
+            .Message {
+                position: fixed;
+                margin-left: 2%;
+            }
+            #TextBox {
+                width: 16%;
+                height: 6%;
+            }
+            #NameBox {
+                width: 8%;
+                height: 3%;
+                margin-left: 6%;
+            }
+            #SubmitBox {
+                margin-left: 8%;
+            }
+            #RefeashBox {
+                margin-left: 7.75%;
+            }
+            #Inputs {
+                position: fixed;
+                margin-top: 2%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="Inputs">
+            <form method="get">
+                <input type="button" onclick="Move(-1)" value="Home Page" class="SideBarButton"/>
+                <br><br><br>
+                <input type="button" onclick="Move(0)" value="Main" class="SideBarButton"/>
+                <br><br><br>
+                <input type="button" onclick="Move(1)" value="Programming" class="SideBarButton"/>
+                <br><br><br>
+                <input type="button" onclick="Move(2)" value="Math" class="SideBarButton"/>
+                <br><br><br>
+                <input type="button" onclick="Move(3)" value="Cubing" class="SideBarButton"/>
+                <br><br><br>
+                <input type="button" onclick="Move(4)" value="Gaming" class="SideBarButton"/>
+                <br><br><br>
+            </form>
+            <form method="post">
+                <input type="text" id="TextBox" name="Message" placeholder="Message" autocomplete="off" class="Message"/>
+                <br><br><br>
+                <input type="text" id="NameBox" name="Username" placeholder="Username" autocomplete="on" class="Message"/>
+                <br><br>
+                <input type="submit" id="SubmitBox" class="Message"/>
+                <br><br>
+                <input type="submit" id="RefeashBox" value="Refeash" class="Message"/>
+            </form>
+        </div>
+        <script>
+            function Move(place) {
+                place = (place == -1) ? "home" : place;
+                place = (place == 0) ? "main" : place;
+                place = (place == 1) ? "programming" : place;
+                place = (place == 2) ? "math" : place;
+                place = (place == 3) ? "cubing" : place;
+                place = (place == 4) ? "gaming" : place;
+                window.location.href = "./" + place;
+            }
+        </script>
+        <br><div class="MessageAll"><img src="./DefaultPfp.jpg" id="MessageImg"><h3 id="MessageName">Console</h3><h2 id="Message">Welsome to this lobby.</h2></div><br><br><br>
+
+    </body>
+</html>
