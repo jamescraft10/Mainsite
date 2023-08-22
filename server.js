@@ -26,11 +26,9 @@ LobbyGet('Math');
 LobbyGet('Cubing');
 LobbyGet('Gaming');
 
-let NameWithSlash;
-
 // Lobby Get
 function LobbyGet(Name) {
-    NameWithSlash = '/' + Name;
+    var NameWithSlash = '/' + Name;
     // Main
     app.get(NameWithSlash, (req, res) => {
         fs.readFile(__dirname + '/index.html', (err, data) => {
