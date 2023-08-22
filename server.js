@@ -26,6 +26,7 @@ LobbyGet('Math');
 LobbyGet('Cubing');
 LobbyGet('Gaming');
 
+let NameWithSlash;
 
 // Lobby Get
 function LobbyGet(Name) {
