@@ -59,14 +59,11 @@ function LobbyGet(Name) {
             if (err) throw err;
             res.write(data);
         });
-        ReadLobbyData();
-    });
-}
 
-function ReadLobbyData() {
-    fs.readFile(__dirname + '/Lobbys/' + Name + '.txt', (err, data) => {
+        fs.readFile(__dirname + '/Lobbys/' + Name + '.txt', (err, data) => {
         if (err) throw err;
         res.end(data);
+    });
     });
 }
 
