@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mainsite</title>
+    <style>
+        body {
+            background-color: #1B1B1E;
+            color: white;
+            font-family: sans-serif;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+        #Pointer {
+            width: 6em;
+            height: 6em;
+            background: radial-gradient(#656566, #1B1B1E);
+            position: absolute;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            box-shadow: 0 0 20px #10003633;
+            transition: 0.1s ease-in;
+            z-index: -1;
+        }
+        #Title {
+            text-align: center;
+            color: white;
+            margin-top: 1%;
+            font-size: 72px;
+            line-height: 64px;
+        }
+        #Title:hover {
+            animation-name: TitleColorChange;
+            animation-duration: 400ms;
+            animation-delay: 20ms;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes TitleColorChange {
+            from {
+                text-shadow: 0px 0px 0px #1B1B1E;
+            }
+            to {
+                text-shadow: 0px 0px 10px white;
+            }
+        }
+        #Lobby1 {
+            position: absolute;
+            margin-left: 35%;
+            transform: translate(-35%, 0%);
+        }
+        #Lobby2 {
+            position: absolute;
+            margin-left: 50%;
+            transform: translate(-50%, 0%);
+        }
+        #Lobby3 {
+            position: absolute;
+            margin-left: 65%;
+            transform: translate(-65%, 0%);
+        }
+        #Lobby4 {
+            position: absolute;
+            margin-left: 42%;
+            margin-top: 8%;
+            transform: translate(-42%, -8%);
+        }
+        #Lobby5 {
+            position: absolute;
+            margin-left: 57%;
+            margin-top: 8%;
+            transform: translate(-57%, -8%);
+        }
+        .LobbyButton {
+            background-color: #D8DBE2;
+            border-radius: 5px;
+            width: 120pt;
+            height: 30pt;
+            font-size: 12pt;
+        }
+        .LobbyButton:hover {
+            animation-name: ColorChange1;
+            animation-duration: 400ms;
+            animation-delay: 20ms;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        .LobbyText {
+            color: #1A1F16;
+            text-align: center;
+            font-size: larger;
+            border: 3px solid black;
+            background-color: #919cb4;
+            margin-top: 2%;
+            border-radius: 5px;
+            width: 110pt;
+            height: 35pt;
+            margin-left: 3pt;
+        }
+        .LobbyText:hover {
+            animation-name: ColorChange2;
+            animation-duration: 400ms;
+            animation-delay: 20ms;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes ColorChange1 {
+            from {
+                color: #1A1F16;
+                background-color: #D8DBE2;
+                text-shadow: 0px 0px 0px #1B1B1E;
+            }
+            to {
+                color: whitesmoke;
+                background-color: #58A4B0;
+                text-shadow: 0px 0px 10px white;
+            }
+        }
+        @keyframes ColorChange2 {
+            from {
+                color: #1A1F16;
+                background-color: #919cb4;
+                text-shadow: 0px 0px 0px #1B1B1E;
+            }
+            to {
+                color: whitesmoke;
+                background-color: #58A4B0;
+                text-shadow: 0px 0px 10px white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="Pointer"></div>
+    <div id="Title">Mainsite</div>
+    <br><br>
+    <div id="Lobby1"><form><input type="button" class="LobbyButton" value="Main" onclick="Move(0)"/></form><div class="LobbyText">This is The Main Lobby</div></div>
+    <div id="Lobby2"><form><input type="button" class="LobbyButton" value="Programming" onclick="Move(1)"/></form><div class="LobbyText">This is The Programming Lobby</div></div>
+    <div id="Lobby3"><form><input type="button" class="LobbyButton" value="Math" onclick="Move(2)"/></form><div class="LobbyText">This is The Math Lobby</div></div>
+    <div id="Lobby4"><form><input type="button" class="LobbyButton" value="Cubing" onclick="Move(3)"/></form><div class="LobbyText">This is The Cubing Lobby</div></div>
+    <div id="Lobby5"><form><input type="button" class="LobbyButton" value="Gaming" onclick="Move(4)"/></form><div class="LobbyText">This is The Gaming Lobby</div></div>
+    <script>
+        const Pointer = document.getElementById("Pointer");
+        window.onmousemove = e => {
+            Pointer.animate({
+                left: `${e.clientX}px`,
+                top: `${e.clientY}px`
+            }, { duration: 1200, fill: "forwards" });
+        }
+
+        function Move(place) {
+            place = (place == 0) ? "main" : place;
+            place = (place == 1) ? "programming" : place;
+            place = (place == 2) ? "math" : place;
+            place = (place == 3) ? "cubing" : place;
+            place = (place == 4) ? "gaming" : place;
+            window.location.href = "./" + place;
+        }
+    </script>
+</body>
+</html>
