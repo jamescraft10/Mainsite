@@ -53,11 +53,11 @@ function LobbyGet(Name) {
 
         console.log(Name + ': ' + Message);
 
-        Write();
+        Write(res);
     });
 }
 
-function Write() {
+function Write(res) {
     fs.readFile(__dirname + '/index.html', (err, data) => {
         res.write(data);
     });
