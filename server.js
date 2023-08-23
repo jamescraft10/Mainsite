@@ -53,13 +53,17 @@ function LobbyGet(Name) {
 
         console.log(Name + ': ' + Message);
 
-        fs.readFile(__dirname + '/index.html', (err, data) => {
-            res.write(data);
-        });
+        Write();
+    });
+}
 
-        fs.readFile(__dirname + '/Lobbys/' + Name + '.txt', (err, data) => {
+function Write() {
+    fs.readFile(__dirname + '/index.html', (err, data) => {
+        res.write(data);
+    });
+
+    fs.readFile(__dirname + '/Lobbys/' + Name + '.txt', (err, data) => {
         res.end(data);
-        });
     });
 }
 
