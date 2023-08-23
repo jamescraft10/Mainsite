@@ -31,10 +31,10 @@ function LobbyGet(Name) {
     var NameWithSlash = '/' + Name;
     // Main
     app.get(NameWithSlash, (req, res) => {
-        ReadFiles();
+        ReadFiles(res);
     });
 
-    function ReadFiles() {
+    function ReadFiles(res) {
         fs.readFile(__dirname + '/index.html', (err, data) => {
             if (err) throw err;
             res.write(data);
