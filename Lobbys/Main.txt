@@ -1,1 +1,0 @@
-<br><div class="MessageAll"><img src="./DefaultPfp.jpg" id="MessageImg"/><h3 id="MessageName">JamesCraft</h3><h2 id="Message">Hello World!</h2></div><br><br><br>
