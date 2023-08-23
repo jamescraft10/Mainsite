@@ -31,6 +31,10 @@ function LobbyGet(Name) {
     var NameWithSlash = '/' + Name;
     // Main
     app.get(NameWithSlash, (req, res) => {
+        ReadFiles();
+    });
+
+    function ReadFiles() {
         fs.readFile(__dirname + '/index.html', (err, data) => {
             if (err) throw err;
             res.write(data);
@@ -39,7 +43,7 @@ function LobbyGet(Name) {
             if (err) throw err;
             res.end(data);
         });
-    });
+    }
 
     // Messaged
     app.post(NameWithSlash, (req, res) => {
