@@ -59,7 +59,7 @@ function LobbyGet(Name) {
 
         fs.readFile(__dirname + '/Lobbys/' + Name + '.txt', (err, data) => {
         res.end(data);
-    });
+        });
     });
 }
 
