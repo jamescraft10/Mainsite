@@ -55,19 +55,7 @@ function LobbyGet(Name) {
 
         console.log(Name + ': ' + Message);
 
-        //ViewSite(res, Name);
-    });
-}
-
-function ViewSite(res, Name) {
-    fs.readFile(__dirname + '/index.html', (err, data) => {
-        if (err) throw err;
-        res.write(data);
-    });
-
-    fs.readFile(__dirname + '/Lobbys/' + Name + '.txt', (err, data) => {
-        if (err) throw err;
-        res.end(data);
+        res.redirect(NameWithSlash);
     });
 }
 
