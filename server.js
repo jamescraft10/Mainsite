@@ -55,7 +55,7 @@ function LobbyGet(Name) {
 
         console.log(Name + ': ' + Message);
 
-        ViewSite(res, Name);
+        //ViewSite(res, Name);
     });
 }
 
