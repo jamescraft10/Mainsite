@@ -31,14 +31,14 @@ function LobbyGet(Name) {
     var NameWithSlash = '/' + Name;
     // Main
     app.get(NameWithSlash, (req, res) => {
-        ReadFiles(res);
-    });
-
-    function ReadFiles(res) {
         fs.readFile(__dirname + '/index.html', (err, data) => {
             if (err) throw err;
             res.write(data);
+            ReadFiles(res);
         });
+    });
+
+    function ReadFiles(res) {
         fs.readFile(__dirname + '/Lobbys/' + Name + '.txt', (err, data) => {
             if (err) throw err;
             res.end(data);
