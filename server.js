@@ -32,9 +32,11 @@ function LobbyGet(Name) {
     // Main
     app.get(NameWithSlash, (req, res) => {
         fs.readFile(__dirname + '/index.html', (err, data) => {
+            if (err) throw err;
             res.write(data);
         });
         fs.readFile(__dirname + '/Lobbys/' + Name + '.txt', (err, data) => {
+            if (err) throw err;
             res.end(data);
         });
     });
@@ -59,10 +61,12 @@ function LobbyGet(Name) {
 
 function ViewSite(res, Name) {
     fs.readFile(__dirname + '/index.html', (err, data) => {
+        if (err) throw err;
         res.write(data);
     });
 
     fs.readFile(__dirname + '/Lobbys/' + Name + '.txt', (err, data) => {
+        if (err) throw err;
         res.end(data);
     });
 }
